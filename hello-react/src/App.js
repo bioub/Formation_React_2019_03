@@ -5,6 +5,7 @@ import { Counter } from './Counter';
 import { ContactForm } from './ContactForm';
 import { HideableClock } from './HideableClock';
 import { Dropdown } from './Dropdown';
+import { HideableCounter } from './HideableCounter';
 
 class App extends Component {
   state = {
@@ -33,6 +34,7 @@ class App extends Component {
         <Counter />
         <ContactForm />
         <HideableClock />
+        <HideableCounter />
         <Dropdown selected={this.state.selected} items={this.state.items} onSelected={this.handleSelected} />
         <Dropdown {...dropdownProps} />
       </div>

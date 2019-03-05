@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "hello-react"
+		},
+		{
+			"path": "todo-react"
+		},
+		{
+			"path": "javascript"
+		},
+		{
+			"path": "hello-redux"
+		}
+	],
+	"settings": {}
+}
