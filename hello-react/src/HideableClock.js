@@ -19,7 +19,7 @@ class HideableClock extends Component {
 
     return (
       <div className="HideableClock">
-        {this.state.show && <Clock />}
+        {this.state.show && <Clock {...this.props} />}
         <button onClick={this.handleClick}>
           {this.state.show ? 'Off' : 'On'}
         </button>

@@ -1,0 +1,13 @@
+$borderColor: black !default;
+
+.Dropdown {
+  
+}
+
+.Selected {
+  border: 1px solid $borderColor;
+}
+
+.Items {
+  border: 1px solid $borderColor;
+}

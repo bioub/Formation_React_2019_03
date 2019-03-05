@@ -19,6 +19,12 @@ class App extends Component {
   };
 
   render() {
+    const dropdownProps = {
+      selected: this.state.selected,
+      items: this.state.items,
+      onSelected: this.handleSelected,
+    };
+
     return (
       <div className="App">
         <Hello />
@@ -28,6 +34,7 @@ class App extends Component {
         <ContactForm />
         <HideableClock />
         <Dropdown selected={this.state.selected} items={this.state.items} onSelected={this.handleSelected} />
+        <Dropdown {...dropdownProps} />
       </div>
     );
   }
