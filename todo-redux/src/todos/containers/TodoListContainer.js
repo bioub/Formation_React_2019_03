@@ -1,9 +1,10 @@
 import { connect } from 'react-redux'
 import { TodoList } from '../components/TodoList/TodoList';
+import { selectTodosItems } from '../selectors';
 
 function mapStateToProps(state) {
   return {
-    todos: state.todos,
+    todos: selectTodosItems(state),
   };
 }
 

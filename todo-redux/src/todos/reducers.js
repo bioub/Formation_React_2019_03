@@ -1,3 +1,5 @@
+import { TODO_CHANGE, TODO_ADD } from './constants';
+
 const initialState = {
   newTodo: 'Achet',
   todos: [{
@@ -17,7 +19,7 @@ const initialState = {
 
 function newTodoReducer(previousState = initialState.newTodo, {type, payload}) {
   switch (type) {
-    case 'TODO_CHANGE':
+    case TODO_CHANGE:
       return payload;
     default:
       return previousState;
@@ -26,7 +28,7 @@ function newTodoReducer(previousState = initialState.newTodo, {type, payload}) {
 
 function todosReducer(previousState = initialState.todos, {type, payload}) {
   switch (type) {
-    case 'TODO_ADD':
+    case TODO_ADD:
       return [...previousState, payload];
     default:
       return previousState;

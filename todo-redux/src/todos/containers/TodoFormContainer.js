@@ -1,26 +1,21 @@
 import { connect } from 'react-redux';
 import { TodoForm } from '../components/TodoForm/TodoForm';
+import { todoAdd, todoChange } from '../actions';
+import { selectNewTodo } from '../selectors';
 
 function mapStateToProps(state) {
   return {
-    newTodo: state.newTodo,
+    newTodo: selectNewTodo(state),
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
     onNewTodoSubmit(newTodo) {
-      dispatch({
-        type: 'TODO_ADD',
-        payload: {
-          id: Math.floor(Math.random() * Number.MAX_SAFE_INTEGER),
-          text: newTodo,
-          completed: false,
-        },
-      });
+      dispatch(todoAdd(newTodo));
     },
     onNewTodoChange(newTodo) {
-      dispatch({type: 'TODO_CHANGE', payload: newTodo});
+      dispatch(todoChange(newTodo));
     },
   };
 }
