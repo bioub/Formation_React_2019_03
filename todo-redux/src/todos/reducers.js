@@ -1,4 +1,4 @@
-import { TODO_CHANGE, TODO_ADD } from './constants';
+import { TODO_CHANGE, TODO_ADD, TODO_DELETE } from './constants';
 
 const initialState = {
   newTodo: 'Achet',
@@ -30,6 +30,12 @@ function todosReducer(previousState = initialState.todos, {type, payload}) {
   switch (type) {
     case TODO_ADD:
       return [...previousState, payload];
+    case TODO_DELETE:
+      const i = previousState.indexOf(payload);
+      return [
+        ...previousState.slice(0, i),
+        ...previousState.slice(i + 1),
+      ];
     default:
       return previousState;
   }

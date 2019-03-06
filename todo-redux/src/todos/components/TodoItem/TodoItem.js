@@ -7,7 +7,7 @@ class TodoItem extends Component {
     return (
       <div className="TodoItem">
         {this.props.todo.text}
-        <button>-</button>
+        <button onClick={this.props.onDelete}>-</button>
       </div>
     );
   }

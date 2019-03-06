@@ -3,3 +3,6 @@ export const selectTodos = (state) => state.todos;
 
 export const selectTodosItems = (state) => selectTodos(state).items;
 export const selectNewTodo = (state) => selectTodos(state).newTodo;
+
+
+export const selectTodosCount = (state) => selectTodosItems(state).length;

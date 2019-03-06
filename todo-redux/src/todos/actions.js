@@ -1,4 +1,4 @@
-import { TODO_ADD, TODO_CHANGE } from './constants';
+import { TODO_ADD, TODO_CHANGE, TODO_DELETE } from './constants';
 
 // redux-actions pour automatiser les actions creators
 function todoAdd(newTodo) {
@@ -19,7 +19,15 @@ function todoChange(newTodo) {
   };
 }
 
+function todoDelete(payload) {
+  return {
+    type: TODO_DELETE,
+    payload,
+  };
+}
+
 export {
   todoAdd,
   todoChange,
+  todoDelete,
 };

@@ -14,7 +14,7 @@ class TodoList extends PureComponent {
 
   render() {
     console.log('render TodoList');
-    const todoItems = this.props.todos.map((todo) => <TodoItem key={todo.id} todo={todo} />)
+    const todoItems = this.props.todos.map((todo) => <TodoItem key={todo.id} todo={todo} onDelete={() => this.props.onDelete(todo)} />)
 
     return (
       <div className="TodoList">
