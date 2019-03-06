@@ -33,7 +33,7 @@ class App extends Component {
         <Clock />
         <Counter />
         <ContactForm />
-        <HideableClock />
+        <HideableClock show={false} />
         <HideableCounter />
         <Dropdown selected={this.state.selected} items={this.state.items} onSelected={this.handleSelected} />
         <Dropdown {...dropdownProps} />

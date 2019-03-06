@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 
 function hideable(InnerComponent) {
 
+  InnerComponent.displayName = InnerComponent.displayName || InnerComponent.name;
+
   class OuterComponent extends Component {
     state = {
-      show: true,
+      show: this.props.show,
     };
     handleClick = () => {
       this.setState({
@@ -17,10 +19,11 @@ function hideable(InnerComponent) {
       // if (this.state.show) {
       //   clockJsx = <Clock />;
       // }
+      const {show, ...innerProps} = this.props;
   
       return (
         <div className="HideableClock">
-          {this.state.show && <InnerComponent {...this.props} />}
+          {this.state.show && <InnerComponent {...innerProps} />}
           <button onClick={this.handleClick}>
             {this.state.show ? 'Off' : 'On'}
           </button>
@@ -28,6 +31,12 @@ function hideable(InnerComponent) {
       )
     }
   }
+
+  OuterComponent.displayName = `Hideable(${InnerComponent.displayName})`;
+
+  OuterComponent.defaultProps = {
+    show: true,
+  };
 
   return OuterComponent;
 }

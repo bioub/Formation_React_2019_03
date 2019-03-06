@@ -33,6 +33,10 @@ function nameReducer(previousState = 'Romain', action) {
 const reducer = combineReducers({
   count: countReducer,
   name: nameReducer,
+  // todos: combineReducers({
+  //   newTodo: newTodoReducer,
+  //   items: itemsReducer,
+  // }),
 });
 
 // équivalent à :
@@ -63,7 +67,7 @@ const reducer = combineReducers({
 // console.log(nextState.count); // 124
 // console.log(previousState === nextState); // false
 
-const store = createStore(reducer, composeWithDevTools());
+const store = createStore(reducer, /*{count: 123, name: 'Romain'},*/ composeWithDevTools());
 
 ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
 
